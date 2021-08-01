@@ -1,0 +1,23 @@
+{
+  "name": "darts-tracker",
+  "version": "1.0.0",
+  "description": "Backend app for dartstracker.github.io",
+  "main": "dartstracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dartstracker/dartstrackerapp.git"
+  },
+  "author": "Joe Frizzell",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dartstracker/dartstracker.github.io/issues"
+  },
+  "homepage": "https://dartstracker.github.io",
+  "dependencies": {
+    "http": "0.0.1-security",
+    "mongodb": "^4.0.1"
+  }
+}
