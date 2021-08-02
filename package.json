@@ -18,6 +18,8 @@
   },
   "homepage": "https://dartstracker.github.io",
   "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "http": "0.0.1-security",
     "mongodb": "^4.0.1"
   }
