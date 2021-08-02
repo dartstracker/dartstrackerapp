@@ -11,15 +11,25 @@ app.listen(port, function() {
   console.log('listening on ' + port);
 })
 app.get('/', (req, res) => {
-  res.set({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-    'Access-Control-Allow-Methods': 'GET'
-  });
-  main(res);
+  if(originDefined(req, res)){
+    res.set({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      'Access-Control-Allow-Methods': 'GET'
+    });
+    main(res);
+  }
 })
-
+function originDefined(req, res){
+  reqOrigin = req.get('origin');
+  if(typeof reqOrigin == 'undefined'){
+    res.redirect('https://dartstracker.github.io');
+    return false;
+  } else {
+    return true;
+  }
+}
 async function main(res) {
   try {
       await client.connect();
