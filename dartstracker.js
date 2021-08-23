@@ -110,6 +110,7 @@ async function saveGame(socket, gameObject){
       if (err) {
         io.to(socket.id).emit('error', err);
       } else {
+        io.to(socket.id).emit('update successful', err);
         socket.broadcast.to(gameObject._id).emit('game updated', gameObject);
       }
       client.close();
