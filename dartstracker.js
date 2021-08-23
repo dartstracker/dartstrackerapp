@@ -22,7 +22,8 @@ const io = require('socket.io')(http, {
 // root server handling
 app.get('/', (req, res) => {
   res.redirect('https://dartstracker.github.io');
-}
+})
+
 
 io.on('connection', (socket) => {
   socket.on('new game', (gameType) => {
