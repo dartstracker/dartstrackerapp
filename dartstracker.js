@@ -104,6 +104,7 @@ async function joinGame(socket, gameId){
 // function to save a game
 async function saveGame(socket, gameObject){
   try {
+    socket.broadcast.to(gameObject._id).emit('start loading');
     await client.connect();
     theDB = client.db('dartstracker');
     let query = { _id: new ObjectID(gameObject._id)};
