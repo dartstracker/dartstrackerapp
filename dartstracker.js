@@ -111,7 +111,8 @@ async function saveGame(socket, gameObject){
     let replacement = {
       gameType: gameObject.gameType,
       players: gameObject.players,
-      states: gameObject.states
+      states: gameObject.states,
+      previousGames: gameObject.previousGames
     }
     theDB.collection('games').replaceOne(query, replacement, function(err, res) {
       if (err) {
