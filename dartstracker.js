@@ -4,7 +4,7 @@ require('dotenv').config();
 // setting up mongodb
 const {MongoClient} = require('mongodb');
 const ObjectID = require('mongodb').ObjectId;
-const port = 8000;
+const port = process.env.PORT || 8000;
 const uri = 'mongodb+srv://' + process.env.DB_USERNAME + ':' + process.env.DB_PASSWORD + '@dartstracker.j7gzq.mongodb.net/dartstracker?retryWrites=true&w=majority';
 const client = new MongoClient(uri);
 
