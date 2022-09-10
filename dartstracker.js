@@ -1,6 +1,3 @@
-// dotenv pulls in environment variables from .env file
-require('dotenv').config();
-
 // setting up mongodb
 const {MongoClient} = require('mongodb');
 const ObjectID = require('mongodb').ObjectId;
